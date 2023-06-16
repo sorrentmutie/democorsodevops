@@ -1,0 +1,16 @@
+﻿@page "/eventifuturi"
+<MioPrimoComponente Eventi="Eventi" OnElimina="Elimina" Titolo="Eventi Futuri" />
+
+@code {
+    List<Evento>? Eventi = new List<Evento>
+    {
+        new Evento { Id = 1, Data = DateTime.Today.AddDays(+7), Località = "Napoli Futuro", Titolo = "Prima lezione Blazor" },
+        new Evento { Id = 2, Data = DateTime.Today.AddDays(+14), Località = "Futuro Remoto", Titolo = "Seconda lezione Blazor" }
+    };
+
+    private void Elimina(Evento evento)
+    {
+        Eventi?.Remove(evento);
+    }
+
+}
